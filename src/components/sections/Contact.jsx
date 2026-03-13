@@ -35,7 +35,7 @@ const socialLinks = [
       </svg>
     ),
     label: "Twitter / X",
-    value: "@yourusername",
+    value: "@owoseni23",
     href: SOCIAL_LINKS.twitter,
     color: "#1da1f2",
   },
