@@ -47,8 +47,8 @@ const socialLinks = [
       </svg>
     ),
     label: "Email",
-    value: SITE_META.email,
-    href: `mailto:${SITE_META.email}`,
+    value: "owoseni0816@gmail.com",
+    href: SOCIAL_LINKS.email,
     color: "#00e5ff",
   },
 ];
