@@ -13,7 +13,7 @@ const socialLinks = [
       </svg>
     ),
     label: "GitHub",
-    value: "github.com/yourusername",
+    value: "https://github.com/alabama08",
     href: SOCIAL_LINKS.github,
     color: "#e0eaf5",
   },
@@ -24,7 +24,7 @@ const socialLinks = [
       </svg>
     ),
     label: "LinkedIn",
-    value: "linkedin.com/in/yourusername",
+    value: "https://www.linkedin.com/in/owoseni/",
     href: SOCIAL_LINKS.linkedin,
     color: "#0077b5",
   },

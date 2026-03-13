@@ -21,7 +21,7 @@ const AdminDashboard = ({ token, onNavigate }) => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res  = await fetch("http://localhost:5000/api/admin/dashboard", {
+        const res  = await fetch("https://portfolio-api-6qgo.onrender.com/api/admin/dashboard", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const json = await res.json();

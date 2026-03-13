@@ -21,7 +21,7 @@ const AdminMessages = ({ token, onNavigate }) => {
         search,
       });
       const res  = await fetch(
-        `http://localhost:5000/api/admin/messages?${params}`,
+        `https://portfolio-api-6qgo.onrender.com/api/admin/messages?${params}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const json = await res.json();
@@ -51,7 +51,7 @@ const AdminMessages = ({ token, onNavigate }) => {
     if (action === "delete" && !window.confirm(`Delete ${selected.length} message(s)?`)) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/admin/messages/bulk", {
+      const res = await fetch("https://portfolio-api-6qgo.onrender.com/api/admin/messages/bulk", {
         method:  "POST",
         headers: {
           "Content-Type": "application/json",

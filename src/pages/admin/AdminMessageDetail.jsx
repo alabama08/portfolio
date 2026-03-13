@@ -14,7 +14,7 @@ const AdminMessageDetail = ({ token, messageId, onNavigate }) => {
     const fetchMessage = async () => {
       try {
         const res  = await fetch(
-          `http://localhost:5000/api/admin/messages/${messageId}`,
+          `https://portfolio-api-6qgo.onrender.com/api/admin/messages/${messageId}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         const json = await res.json();
@@ -32,7 +32,7 @@ const AdminMessageDetail = ({ token, messageId, onNavigate }) => {
   const handleStatusChange = async (status) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/admin/messages/${messageId}/status`,
+        `https://portfolio-api-6qgo.onrender.com/api/admin/messages/${messageId}/status`,
         {
           method:  "PATCH",
           headers: {
@@ -56,7 +56,7 @@ const AdminMessageDetail = ({ token, messageId, onNavigate }) => {
   const handleStar = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/admin/messages/${messageId}/status`,
+        `https://portfolio-api-6qgo.onrender.com/api/admin/messages/${messageId}/status`,
         {
           method:  "PATCH",
           headers: {
@@ -79,7 +79,7 @@ const AdminMessageDetail = ({ token, messageId, onNavigate }) => {
     setSending(true);
     try {
       const res = await fetch(
-        `http://localhost:5000/api/admin/messages/${messageId}/reply`,
+        `https://portfolio-api-6qgo.onrender.com/api/admin/messages/${messageId}/reply`,
         {
           method:  "POST",
           headers: {
@@ -110,7 +110,7 @@ const AdminMessageDetail = ({ token, messageId, onNavigate }) => {
     if (!window.confirm("Permanently delete this message?")) return;
     try {
       const res = await fetch(
-        `http://localhost:5000/api/admin/messages/${messageId}`,
+        `https://portfolio-api-6qgo.onrender.com/api/admin/messages/${messageId}`,
         {
           method:  "DELETE",
           headers: { Authorization: `Bearer ${token}` },

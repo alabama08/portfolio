@@ -25,8 +25,8 @@ export const NAV_LINKS = [
 
 // ─── Social Links ─────────────────────────────────
 export const SOCIAL_LINKS = {
-  github:   "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
+  github:   "https://github.com/alabama08",
+  linkedin: "https://www.linkedin.com/in/owoseni/",
   twitter:  "https://twitter.com/yourusername",
   email:    "mailto:owosenimotunrayo2@gmail.com",
 };
