@@ -1,7 +1,6 @@
 import { useState } from "react";
 import useReveal from "../../hooks/useReveal";
 import SectionHeader from "../common/SectionHeader";
-import { SITE_META, SOCIAL_LINKS } from "../../utils/constants.js";
 import { API_BASE_URL } from "../../utils/constants.js";
 import "./Contact.css";
 
@@ -50,6 +49,29 @@ const socialLinks = [
     value: "owoseni0816@gmail.com",
     href:  "mailto:owoseni0816@gmail.com",
     color: "#00e5ff",
+  },
+  {
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .92h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+      </svg>
+    ),
+    label: "Phone",
+    value: "+234 812 385 5252",
+    href:  "tel:+2348123855252",
+    color: "#00e676",
+  },
+  {
+    icon: (
+      <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </svg>
+    ),
+    label: "Location",
+    value: "Lagos, Nigeria",
+    href:  "https://maps.google.com/?q=Lagos,Nigeria",
+    color: "#ff3cac",
   },
 ];
 
@@ -144,19 +166,22 @@ const Contact = () => {
         <div className="contact-info reveal-left">
           <div className="contact-info-card">
             <h3 className="contact-info-title">
-              Let's build something amazing together
+              Got an idea? Let's turn it into reality.
             </h3>
             <p className="contact-info-text">
-              I am currently available for freelance projects, full-time
-              positions, and consulting work. Whether you have a project brief
-              ready or just an idea — I would love to hear from you.
+              I'm Owoseni Motunrayo — a full-stack developer based in
+              Lagos, Nigeria. I'm open to freelance projects, full-time
+              roles, and exciting collaborations. Whether your idea is
+              fully formed or just a spark, reach out and let's build
+              something great together.
             </p>
             <p className="contact-info-text">
-              Typical response time is within{" "}
+              I typically respond within{" "}
               <strong style={{ color: "var(--accent)" }}>24 hours</strong>.
+              Prefer a quick call? Feel free to ring me directly.
             </p>
 
-            {/* Status */}
+            {/* Availability Status */}
             <div className="contact-availability">
               <span className="availability-dot" />
               <span className="availability-text">
@@ -164,7 +189,7 @@ const Contact = () => {
               </span>
             </div>
 
-            {/* Social Links */}
+            {/* Social & Contact Links */}
             <div className="contact-links">
               {socialLinks.map(({ icon, label, value, href, color }) => (
                 <div
