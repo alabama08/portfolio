@@ -13,8 +13,8 @@ const socialLinks = [
       </svg>
     ),
     label: "GitHub",
-    value: "https://github.com/alabama08",
-    href: SOCIAL_LINKS.github,
+    value: "github.com/alabama08",
+    href:  "https://github.com/alabama08",
     color: "#e0eaf5",
   },
   {
@@ -24,8 +24,8 @@ const socialLinks = [
       </svg>
     ),
     label: "LinkedIn",
-    value: "https://www.linkedin.com/in/owoseni/",
-    href: SOCIAL_LINKS.linkedin,
+    value: "linkedin.com/in/owoseni",
+    href:  "https://www.linkedin.com/in/owoseni/",
     color: "#0077b5",
   },
   {
@@ -36,7 +36,7 @@ const socialLinks = [
     ),
     label: "Twitter / X",
     value: "@owoseni23",
-    href: SOCIAL_LINKS.twitter,
+    href:  "https://twitter.com/owoseni23",
     color: "#1da1f2",
   },
   {
@@ -48,7 +48,7 @@ const socialLinks = [
     ),
     label: "Email",
     value: "owoseni0816@gmail.com",
-    href: SOCIAL_LINKS.email,
+    href:  "mailto:owoseni0816@gmail.com",
     color: "#00e5ff",
   },
 ];
@@ -83,7 +83,6 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    // Clear error on change
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
