@@ -1,0 +1,194 @@
+/* ─── Hero Base ──────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 8% 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── Background ─────────────────────────────── */
+.hero-bg-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 55% at 70% 50%, rgba(0,229,255,0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 45% at 15% 65%, rgba(123,47,255,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+/* ─── Content ────────────────────────────────── */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+}
+
+.hero-badge-wrap {
+  margin-bottom: 28px;
+}
+
+/* ─── Name ───────────────────────────────────── */
+.hero-name {
+  font-family: 'Syne', sans-serif;
+  line-height: 0.95;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-name-line1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--text-muted);
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-name-line2 {
+  font-size: clamp(3.2rem, 8vw, 6.8rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  animation: fadeUp 0.8s ease both;
+}
+
+/* ─── Role ───────────────────────────────────── */
+.hero-role {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  min-height: 2.2rem;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-role-text {
+  color: var(--text);
+}
+
+.hero-cursor {
+  color: var(--accent);
+  animation: blink 1s ease-in-out infinite;
+  font-weight: 300;
+}
+
+.hero-cursor.cursor-deleting {
+  color: var(--accent2);
+}
+
+/* ─── Description ────────────────────────────── */
+.hero-desc {
+  max-width: 560px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+
+/* ─── CTA Buttons ────────────────────────────── */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+
+/* ─── Scroll Indicator ───────────────────────── */
+.hero-scroll-indicator {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  animation: fadeIn 1.2s 1.2s ease both;
+}
+
+.scroll-line {
+  width: 44px;
+  height: 1px;
+  background: var(--text-muted);
+  animation: scrollLine 2.2s ease-in-out infinite;
+}
+
+/* ─── Stats ──────────────────────────────────── */
+.hero-stats {
+  position: absolute;
+  right: 8%;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 2;
+}
+
+.hero-stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 22px;
+  text-align: right;
+  animation: fadeLeft 0.8s ease both;
+  transition: border-color 0.3s ease,
+              transform    0.3s ease,
+              box-shadow   0.3s ease;
+}
+
+.hero-stat-card:hover {
+  border-color: var(--accent);
+  transform: translateX(-4px);
+  box-shadow: var(--glow);
+}
+
+.hero-stat-number {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat-label {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 1100px) {
+  .hero-stats {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .hero-stat-card {
+    text-align: left;
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 120px 5% 60px; }
+  .hero-name-line2 { letter-spacing: -1px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+}

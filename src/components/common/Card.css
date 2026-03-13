@@ -1,0 +1,31 @@
+.card-base {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: border-color 0.3s ease,
+              transform    0.3s ease,
+              box-shadow   0.3s ease;
+}
+
+/* ─── Padding ────────────────────────────────── */
+.card-pad-sm { padding: 16px; }
+.card-pad-md { padding: 28px; }
+.card-pad-lg { padding: 40px; }
+
+/* ─── Hover ──────────────────────────────────── */
+.card-hover:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--glow);
+}
+
+/* ─── Glow ───────────────────────────────────── */
+.card-glow {
+  box-shadow: var(--glow);
+  border-color: var(--accent);
+}
+
+/* ─── Clickable ──────────────────────────────── */
+.card-clickable {
+  cursor: pointer;
+}

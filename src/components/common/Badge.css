@@ -1,0 +1,56 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+
+/* ─── Sizes ──────────────────────────────────── */
+.badge-sm { font-size: 9px;  padding: 3px 10px; }
+.badge-md { font-size: 10px; padding: 5px 14px; }
+.badge-lg { font-size: 11px; padding: 7px 18px; }
+
+/* ─── Variants ───────────────────────────────── */
+.badge-default {
+  background: var(--surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.badge-accent {
+  background: rgba(0, 229, 255, 0.08);
+  color: var(--accent);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.badge-accent2 {
+  background: rgba(255, 60, 172, 0.08);
+  color: var(--accent2);
+  border: 1px solid rgba(255, 60, 172, 0.2);
+}
+
+.badge-accent3 {
+  background: rgba(123, 47, 255, 0.08);
+  color: var(--accent3);
+  border: 1px solid rgba(123, 47, 255, 0.2);
+}
+
+.badge-success {
+  background: rgba(0, 230, 118, 0.08);
+  color: #00e676;
+  border: 1px solid rgba(0, 230, 118, 0.2);
+}
+
+/* ─── Dot ────────────────────────────────────── */
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 2s ease-in-out infinite;
+}

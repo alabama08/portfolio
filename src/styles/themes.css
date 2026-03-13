@@ -1,0 +1,54 @@
+/* ─── THEME TRANSITION ───────────────────────────── */
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease,
+              border-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* ─── LIGHT THEME OVERRIDES ──────────────────────── */
+[data-theme="light"] body {
+  cursor: auto;
+}
+
+[data-theme="light"] .card {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .card:hover {
+  box-shadow: 0 8px 32px rgba(0, 153, 187, 0.15);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: var(--accent3);
+}
+
+[data-theme="light"] ::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ─── THEME TOGGLE BUTTON ────────────────────────── */
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease,
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
+  font-size: 18px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: rotate(20deg) scale(1.1);
+  box-shadow: var(--glow);
+}

@@ -1,0 +1,392 @@
+.experience {
+  background: var(--bg);
+}
+
+/* ─── Tabs ───────────────────────────────────── */
+.exp-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 56px;
+}
+
+.exp-tab {
+  padding: 9px 24px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: 99px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.exp-tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.exp-tab-active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+
+/* ─── Timeline Wrapper ───────────────────────── */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 0 40px;
+}
+
+/* ─── Vertical Line ──────────────────────────── */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--accent) 10%,
+    var(--accent3) 50%,
+    var(--accent2) 90%,
+    transparent
+  );
+  opacity: 0.4;
+}
+
+/* ─── Timeline Item ──────────────────────────── */
+.timeline-item {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: calc(50% + 48px);
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.timeline-item-right {
+  justify-content: flex-start;
+  padding-right: 0;
+  padding-left: calc(50% + 48px);
+}
+
+/* ─── Dot ────────────────────────────────────── */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  background: var(--surface);
+  border: 2px solid var(--dot-color, var(--accent));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: box-shadow 0.3s ease,
+              transform  0.3s ease;
+}
+
+.timeline-dot:hover {
+  transform: translateX(-50%) scale(1.12);
+  box-shadow: 0 0 20px var(--dot-color, var(--accent));
+}
+
+.timeline-dot-icon {
+  font-size: 18px;
+}
+
+.timeline-dot-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--dot-color, var(--accent));
+  opacity: 0.25;
+}
+
+/* ─── Card ───────────────────────────────────── */
+.timeline-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease,
+              transform    0.3s ease,
+              box-shadow   0.3s ease;
+}
+
+.timeline-card:hover {
+  border-color: var(--card-color, var(--accent));
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.timeline-card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--card-color, var(--accent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-card:hover .timeline-card-accent {
+  opacity: 1;
+}
+
+/* ─── Card Header ────────────────────────────── */
+.timeline-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.timeline-card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-type-badge {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-family: 'Space Mono', monospace;
+}
+
+.badge-work {
+  background: rgba(0, 229, 255, 0.08);
+  color: var(--accent);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.badge-education {
+  background: rgba(123, 47, 255, 0.08);
+  color: var(--accent3);
+  border: 1px solid rgba(123, 47, 255, 0.2);
+}
+
+.timeline-current-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00e676;
+  background: rgba(0, 230, 118, 0.08);
+  border: 1px solid rgba(0, 230, 118, 0.2);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-family: 'Space Mono', monospace;
+}
+
+.current-dot {
+  width: 6px;
+  height: 6px;
+  background: #00e676;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.timeline-period {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-family: 'Space Mono', monospace;
+}
+
+/* ─── Role & Company ─────────────────────────── */
+.timeline-role {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.timeline-company-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.timeline-company {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--card-color, var(--accent));
+}
+
+.timeline-separator {
+  color: var(--border);
+  font-size: 12px;
+}
+
+.timeline-company-type,
+.timeline-location {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ─── Description ────────────────────────────── */
+.timeline-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+/* ─── Achievements ───────────────────────────── */
+.timeline-achievements {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+
+.timeline-achievements-title {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-family: 'Space Mono', monospace;
+}
+
+.timeline-achievements-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timeline-achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.achievement-arrow {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ─── Stack Tags ─────────────────────────────── */
+.timeline-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.timeline-stack-tag {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 99px;
+  background: var(--bg3);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  transition: all 0.25s ease;
+}
+
+.timeline-stack-tag:hover {
+  border-color: var(--card-color, var(--accent));
+  color: var(--card-color, var(--accent));
+}
+
+/* ─── Bottom CTA ─────────────────────────────── */
+.experience-cta {
+  text-align: center;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.experience-cta p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.exp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  border-radius: 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exp-cta-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: var(--glow);
+  transform: translateY(-3px);
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 900px) {
+  .timeline-line { left: 24px; }
+
+  .timeline-item,
+  .timeline-item-right {
+    padding-left: 72px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+
+  .timeline-dot {
+    left: 24px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .timeline-dot-icon { font-size: 15px; }
+}
+
+@media (max-width: 600px) {
+  .timeline-company-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .timeline-separator { display: none; }
+}
